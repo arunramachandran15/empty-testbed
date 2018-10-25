@@ -17,6 +17,12 @@ events.on("push", function(e, project) {
   node.run()
 })
 
+events.on("myevent", function(e) {
+  console.log(JSON.stringify(e))
+  var hook = JSON.parse(e.payload)
+  console.log("===> Image push my event")
+})
+
 events.on("imagePush", function(e) {
   console.log(JSON.stringify(e))
   var hook = JSON.parse(e.payload)
